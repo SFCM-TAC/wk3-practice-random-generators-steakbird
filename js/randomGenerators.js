@@ -14,19 +14,45 @@ const eightBallGenerator = null;
 
 function handleDiceRoll() {
   const resultElement = document.getElementById('diceResult');
-
+var diceResult = Math.random() * 6;
+//generates a random number between 0 and 5
+var roundedNumber = Math.ceil(diceResult);
+//rounds that number up to 1 - 6
   // TODO: call a method on diceRollGenerator to populate result with a random value
-  const result = "result";
+  const result = roundedNumber;
   resultElement.innerHTML = result;
 }
 
-function handleEightBallShake() {
-  const resultElement = document.getElementById('eightBallResult');
+const  resultList = new Object();
+resultList.first = 'Absolutely!';
+resultList.second = 'Without a doubt';
+resultList.third  = 'Hmm, Im not so sure about that one..';
+resultList.fourth ='No';
+resultList.fifth  = 'If you believe enough';
+resultList.sixth = 'You should ask 1 more time...';
+
+
+function getAnswer() {
+      var diceResult = Math.random() * 6;
+    //generates a random number between 0 and 5
+    var roundedNumber = Math.ceil(diceResult);
+return roundedNumber;
+};
+getAnswer();
+if ( getAnswer === 1) {
+resultList.first;
+}
+    else if (getAnswer > 1){
+        document.write("I dunno buddy, you tell me");
+    }
+
 
   // TODO: call a method on eightBallGenerator to populate result with a random value
-  const result = "result";
+function handleEightBallShake(){
+  const result = getAnswer();
   resultElement.innerHTML = result;
 }
+handleEightBallShake();
 
 document.addEventListener("DOMContentLoaded", function() {
   // this code block runs when the page finishes loading
